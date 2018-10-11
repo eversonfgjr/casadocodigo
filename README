@@ -1,0 +1,13 @@
+Criação do docker do Mysql
+
+sudo docker run --name mysqld -p 3306:3306 -e MYSQL_ROOT_PASSWORD=****** -d mysql
+
+Criação do banco de dados
+
+sudo docker exec -it <ID_CONTAINER> bash
+
+No terminal do Mysql:
+mysql -uroot -p
+
+Finalmente crie o banco de dados:
+create database casadocodigo;
