@@ -45,4 +45,14 @@ public class ProdutosController {
         return modelAndView;
     }
 
+
+	public ProdutoDAO getProdutoDao() {
+		return produtoDao;
+	}
+
+
+	public void setProdutoDao(ProdutoDAO produtoDao) {
+		this.produtoDao = produtoDao;
+	}
+
 }
