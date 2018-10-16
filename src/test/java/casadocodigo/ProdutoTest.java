@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Rule;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -16,13 +16,17 @@ import br.com.casadocodigo.loja.controllers.ProdutosController;
 import br.com.casadocodigo.loja.daos.ProdutoDAO;
 import br.com.casadocodigo.loja.models.Produto;
 
-class ProdutoTest {
+public class ProdutoTest {
 
 	
 	private ProdutosController produtosController;
 	
 	@Rule
 	public MockitoRule mockitoRule = MockitoJUnit.rule();
+	
+	public ProdutoTest() {
+		
+	}
 	
 	private Produto criarProduto() {
 		Produto produto = new Produto();
@@ -37,7 +41,7 @@ class ProdutoTest {
 	
 
 	@Test
-	void testGravar() {
+	public void testGravar() {
 		Produto p = criarProduto();
 		ProdutoDAO spy = Mockito.spy(new ProdutoDAO());
 		Mockito.doNothing().when(spy).gravar(p);
@@ -48,7 +52,7 @@ class ProdutoTest {
 	}
 
 	@Test
-	void testListar() {
+	public void testListar() {
 		
 		List<Produto> lista = new ArrayList<Produto>();
 		
