@@ -1,0 +1,10 @@
+node {
+  stage('SCM') {
+    git 'https://github.com/eversonfgjr/casadocodigo'
+  }
+  stage('SonarQube analysis') {
+    withSonarQubeEnv('My SonarQube Server') {
+      sh 'mvn clean package sonar:sonar'
+    } // SonarQube taskId is automatically attached to the pipeline context
+  }
+}
